@@ -1,0 +1,20 @@
+{
+  "name": "vuepress-gh-actions-gh-pages-example",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Deploying VuePress to GitHub Pages with GitHub Actions.",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "cross-env BASE_URL=/vuepress-gh-actions-gh-pages-example/ vuepress build docs"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Markus Hsi-Yang Fritz",
+    "email": "markus.h.y.fritz@gmail.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "cross-env": "^6.0.3",
+    "vuepress": "^1.2.0"
+  }
+}
