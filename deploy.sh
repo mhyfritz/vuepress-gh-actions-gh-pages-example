@@ -22,6 +22,9 @@ if [ -n "${ACTIONS_DEPLOY_KEY}" ]; then
     ssh-keyscan -t rsa github.com > "${SSH_DIR}/known_hosts"
     echo "${ACTIONS_DEPLOY_KEY}" > "${SSH_DIR}/id_rsa"
     chmod 400 "${SSH_DIR}/id_rsa"
+
+    git config user.name "${GITHUB_ACTOR}"
+    git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 fi
 
 # if you are deploying to https://<USERNAME>.github.io
