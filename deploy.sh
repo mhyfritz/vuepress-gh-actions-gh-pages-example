@@ -16,6 +16,14 @@ git init
 git add -A
 git commit -m 'deploy'
 
+if [ -n "${ACTIONS_DEPLOY_KEY}" ]; then
+    SSH_DIR="/root/.ssh"
+    mkdir "${SSH_DIR}"
+    ssh-keyscan -t rsa github.com > "${SSH_DIR}/known_hosts"
+    echo "${ACTIONS_DEPLOY_KEY}" > "${SSH_DIR}/id_rsa"
+    chmod 400 "${SSH_DIR}/id_rsa"
+fi
+
 # if you are deploying to https://<USERNAME>.github.io
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
