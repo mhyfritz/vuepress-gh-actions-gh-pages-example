@@ -16,6 +16,8 @@ git init
 git add -A
 git commit -m 'deploy'
 
+env
+
 if [ -n "${ACTIONS_DEPLOY_KEY}" ]; then
     SSH_DIR="/root/.ssh"
     mkdir "${SSH_DIR}"
