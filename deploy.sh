@@ -13,7 +13,7 @@ cd docs/.vuepress/dist
 # echo 'www.example.com' > CNAME
 
 if [ -n "${ACTIONS_DEPLOY_KEY}" ]; then
-    SSH_DIR="/root/.ssh"
+    SSH_DIR="${HOME}/.ssh"s
     mkdir "${SSH_DIR}"
     ssh-keyscan -t rsa github.com > "${SSH_DIR}/known_hosts"
     echo "${ACTIONS_DEPLOY_KEY}" > "${SSH_DIR}/id_rsa"
